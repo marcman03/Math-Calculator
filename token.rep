@@ -1,0 +1,17 @@
+union t{
+	int _i;
+	racional _r;
+	double _d;
+	string *_s;
+	t();
+	~t();
+	
+};
+t _t;
+codi _c;
+bool mem;
+
+static bool operador(const token &t);
+
+//Hem escollit un union amb un enter, un racional, un double, un punter a string perquè un token pot ser qualsevol d'aquests tipus entre d'altres i hem escollit una union en comptes d'una struct perquè l'struct agafa la memoria necessària per emmagatzemar tots els tipus i un union només per emmagatzemar el tipus que més memoria utilitza.
+

@@ -1,0 +1,24 @@
+struct node {
+	token _info;
+	node* _esq;
+	node* _dret;
+};
+node* _arrel;
+
+static void print(node *n,int space);
+static bool operador (const token t);
+static bool operand (const token t);
+static bool binari (const token t);
+static bool funcio (const token t);
+static bool correcte (list<token>::const_iterator a, list<token>::const_iterator b);
+static bool prioritat (const token t1, const token t2);
+static node* rec_preordre_copia (node *n);
+static void destrueix_expressio (node *n);
+static bool rec_inordre_iguals (node *n, node *m);
+static void rec_inordre_variables (node *n, list<string> & l);
+static node* rec_inordre_canvi (node *n, const string & v, const expressio & e);
+static void rec_inordre_llista (node *n, node *ant, list<token> & lt);
+static node* rec_postordre_simplify(node *n, bool &simp);
+
+
+//Hem escollit un arbre binari de tokens on els operadors unaris tenen el fill esquerre null. No hem escollit un arbre balancejat ja que ens interesa recorrer tots els nodes en tots els casos. Hem escollit que els unaris tinguin el fill esquerre null perquè al construir una expressió mitjançant una llista de tokens, quan ens trobem un operador binari volem agafar dues expressions de la pila d'expressions. El top de la pila sempre ha d'anar al fill dret i el següent a l'esquerre per a que l'arbre de l'expressió sigui igual a la llista. Per tant sempre que trobem un operador fiquem el top de la pila al fill dret i després comprobem si l'operador és binari, i si ho és, fiquem la seguent expressio de la pila al fill esquerre.

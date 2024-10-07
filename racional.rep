@@ -1,0 +1,4 @@
+int _num;
+int _den;
+
+//Hem escollit representar un racional com a 2 enters ja que és la opció més senzilla que hem trobat.

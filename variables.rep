@@ -1,0 +1,24 @@
+struct node {
+	string _k;
+	expressio _v;
+	node *_esq;
+	node *_dret;
+	unsigned int _h;
+};
+node *_arrel;
+
+static node* rec_preordre_copia(node *n);
+static void destrueix_expressio(node *n);
+static int altura(node *n);
+static int factor_equilibri(node *n);
+static node* rotacio_dreta(node *n);
+static node* rotacio_esquerra(node *n);
+static node* assigna_bst(node *n, const string & v, const expressio & e);	
+static node* unassign_bst(node *n, const string & v);
+static node* ajunta(node *e, node *d);
+static node* elimina_maxim(node *p);
+static node* valor_bst(node *n, const string & lv);
+static void rec_inordre (node *n, list<string> & l);
+
+
+//Hem escollit un AVL amb un string per l'identificador de les variables, una expressió el valor de les variables i un enter per l'altura. Hem escollit un AVL perquè volem que el cost sigui logarítmic en la majoria dels mètodes i per tant no ens serveix un arbre no balencejat. Entre altres tipus de diccionaris hem escollit aquest perquè és amb el que més familiaritzats estem.

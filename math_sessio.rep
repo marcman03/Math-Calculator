@@ -1,0 +1,7 @@
+variables _v;
+bool _end;
+
+static bool operand (const token t);
+static void analitza_comanda(const list<token> &l) throw(error);
+
+//Hem escollit un variables de la classe variables per utilitzar els mètodes públics i guardar variables i els seus valors. A més hem escollit un boolea per saber quan la sessió s'ha acabat perquè era la opció més còmode.
